@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+ <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kevyn Music Streaming</title>
+      <link rel="shortcut icon" href="src/assets/icons/navicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+          <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+            <link rel="stylesheet" href="src/reset.css">
+              <link rel="stylesheet" href="src/styles/vars.css">
+               <link rel="stylesheet" href="main.css">
+                <link rel="stylesheet" href="src/sidebar-footer.css">
+                  <link rel="stylesheet" href="media-queries.css">
+                   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" />
+                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" />
+                      <link rel="stylesheet" href="./volume.css">
+                        </head>
+<body>
+  <main>
+    <nav class="header__navigation"></nav>
+      <div class="navigation">
+        <button class="arrow-left">
+          <img src="src/assets/icons/small-left.png" alt="Voltar">
+           </button>
+              <button class="arrow-right">
+                <img src="src/assets/icons/small-right.png" alt="Proxímo">
+                 </button>
+
+<div class="search-box">
+  <input class="search" type="text" name="search" id="search" maxlength="800" placeholder="O que você deseja ouvir ?" onkeydown="if(event.key === 'Enter') { searchAndPlay(); }">
+    <img id="lupa" src="src/assets/icons/search.png" alt="busca" onclick="searchAndPlay()">
+       </div>
+         </div>
+
+
+
+<!-- Seção do cabeçalho e formulário de login -->
+  <div class="header-login">
+    <button id="subscribeBtn" class="subscribe" onclick="showSignUpForm()">Inscreva-se</button>
+      <button id="loginBtn" class="login" onclick="showLoginForm()">Entrar</button>
+         <button id="logoutBtn" style="display: none;" onclick="logout()">Sair</button>
+           </div>
+
+<!-- Formulário de inscrição -->
+  <div id="signUpForm" class="background-blur" style="display: none;">
+    <h1>Crie sua conta</h1>
+      <input type="text" id="usernameInputSignUp" placeholder="Nome de usuário" maxlength="18" minlength="1"><br>
+        <input type="password" id="passwordInputSignUp" placeholder="Senha" minlength="4"> <br>
+          <button onclick="cancelSignUp()">Cancelar</button>
+            <button onclick="submitSignUpForm()">Inscrever-se</button>
+              <h2>Senha no mínimo: 4 Caracteres.</h2>
+                </div>
+
+<!-- Formulário de login -->
+  <div id="loginForm" class="background-blur" style="display: none;">
+    <h1>Acesse sua conta</h1>
+       <input type="text" id="usernameInputLogin" placeholder="Nome de usuário" maxlength="18" minlength="1"><br>
+         <input type="password" id="passwordInputLogin" placeholder="Senha" minlength="4"> <br>
+           <button onclick="cancelLogin()">Cancelar</button>
+             <button onclick="submitLoginForm()">Entrar</button>
+              </div>
+
+<!-- Mensagem de sucesso -->
+  <button id="successMessage" style="display: none;"></button>
+    <button id="successAcount" style="display: none;"></button>
+    </div>
+
+<!-- PLAYLIST -->
+  <button id="toggleButton" onclick="togglePlayer()">Playlist Aleatória</button>
+    <div id="player" style="display: none;">
+      <audio id="minhaPlaylist" controls style="display: none;">
+        <source src="src/music/1.Maverick Sabre - Slow Vintage Culture Remix.mp3" type="audio/mp3">
+          </audio>
+       
+<!--Player-->
+  <button onclick="faixaAnterior()" class="bi bi-skip-backward-circle-fill"></button>
+    <button id="playPauseButton" onclick="playPause()" class="bi bi-play-circle-fill"></button>
+      <button onclick="proximaFaixa()" class="bi bi-fast-forward-circle-fill"></button>
+          
+<br>
+
+<!--Timer e Slider de tempo-->
+  <p><span id="currentTime">0:00</span></p>
+    <p><span id="remainingTime">0</span></p> 
+      <input type="range" id="progressSlider" min="0" max="100" step="0.01" value="0">
+          
+<!--Tempo Restante-->
+   <div id="trackInfo">
+      <div id="trackTitleDiv">
+        <h2 id="trackTitle">Slow Down</h2>
+            </div>
+              <div id="trackArtistDiv">
+                 <p id="trackArtist">Vintage Culture</p>
+                  </div>
+                     </div>
+
+<!--Controle de volume-->
+  <input id="volumeControl" class="volume-slider" type="range" min="0" max="1" step="0.01" value="0.5" onchange="adjustVolume(this.value)">
+    <i id="vol" class="bi bi-volume-up-fill" style="cursor: pointer;" onclick="toggleMute()"></i>
+      </div>
+
+      <div class="playlist-container">
+        <div id="result-playlists">
+          <div class="playlist">
+           <span class="navplay">Navegue pelas Playlists</span>
+            </div>
+
+  <!-- LIST ITEM  -->
+      <div class="offer__scroll-container">
+            <div class="offer__list">
+              <section class="offer__list-item">
+                
+                
+                <!-- CARD 1 -->
+                <a href="src/music/1.Maverick Sabre - Slow Vintage Culture Remix.mp3" class="cards">
+                  <div class="cards card1">
+                    <img src="./src/assets/playlist/1.jpeg" alt="Slow Down - Vintage Culture "/>
+                      <span>Brazilian Bass 2024</span>
+                       </div>
+                          </a>
+
+            <!-- CARD 2 -->
+            <a href="src/music/2.Dua Lipa - New Rules.mp3" class="cards">
+                <div class="cards card2">
+                  <img src="./src/assets/playlist/2.jpg" alt="New Rules - Dua Lipa" />
+                    <span>Today's Top Hits</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 3 -->
+              <a href="src/music/3.Spectrum - Marco Generani .mp3" class="cards">
+                <div class="cards card3">
+                  <img src="./src/assets/playlist/3.JPEG" alt="Spectrum - Marco Generani" />
+                    <span>EDM Hits</span>
+                      </div>
+                         </a>
+
+              <!-- CARD 4 -->
+              <a href="src/music/4.Mwaki feat. Sofiya Nzau.mp3" class="cards">
+                <div class="cards card4">
+                  <img src="./src/assets/playlist/4.jpeg" alt="Mwaki - Zerb & Sofiya Nzau" />
+                    <span>Chill Vibes</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 5 -->
+              <a href="src/music/5.I KNOW Remix.mp3" class="cards">
+                <div class="cards card5">
+                  <img src="./src/assets/playlist/5.jpg" alt="I KNOW Remix - Travis Scott" />
+                    <span>Rewind 2023</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 6 -->
+              <a href="src/music/6.Black Coffee - Turn Me On.mp3" class="cards">
+                <div class="cards card6">
+                  <img src="./src/assets/playlist/6.jpeg" alt="Turn Me On" />
+                    <span>Track IDs - Black Coffee</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 7 -->
+              <a href="src/music/7.Boris Brejcha - Space Diver.mp3" class="cards">
+                <div class="cards card7">
+                  <img src="./src/assets/playlist/7.jpeg" alt="Space Diver" />
+                    <span>Track IDs - Boris Brejcha</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 8 -->
+              <a href="src/music/8.Paris - Keinemusik.mp3" class="cards">
+                <div class="cards card8">
+                  <img src="./src/assets/playlist/8.jpeg" alt="Paris - Keinemusik" />
+                    <span>Eletronic Rising</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 9 -->
+              <a href="src/music/9.Ninetoes - Finder (Carl Cox Remix).mp3" class="cards">
+                <div class="cards card9">
+                  <img src="./src/assets/playlist/9.jpeg" alt="Finder" class="cardInfo" />
+                    <span>Track IDs - Carl Cox</span>
+                      </div>
+                        </a>
+
+              <!-- CARD 10 -->
+              <a href="src/music/10.Rex The Dog - Change This Pain For Ecstasy.mp3" class="cards">
+                <div class="cards card10">
+                  <img src="./src/assets/playlist/10.jpeg" alt="Change Pain For Ecstasy" />
+                   <span>Track IDs - Tale Of Us</span>
+                    </div>
+                     </a>
+
+              <!-- CARD 11 -->
+              <a href="src/music/11.Drake - Get It Together feat. Jorja Smith.mp3" class="cards">
+                <div class="cards card11">
+                  <img src="./src/assets/playlist/12.jpg" alt="Get It Together" />
+                    <span>This is Drake</span>
+                      </div>
+                         </a>
+
+              <!-- CARD 12 -->
+              <a href="src/music/12.Filipe Ret - Jamais Serão.mp3" class="cards">
+                <div class="cards card12">
+                  <img src="./src/assets/playlist/11.jpg" alt="Jamais Serão" />
+                    <span>This is Filipe Ret</span> 
+                      </div>
+                        </a>
+
+              <!-- CARD 13 -->
+              <a href="src/music/13.50Cent - P.I.M.P..mp3" class="cards">
+                <div class="cards card13">
+                  <img src="./src/assets/playlist/13.jpg" alt="P.I.M.P" />
+                   <span>This is 50 Cent</span>
+                    </div>
+                     </a>
+
+              <!-- CARD 14 -->
+              <a href="src/music/15.Kanye West & Lil Pump - I Love It.mp3" class="cards">
+                <div class="cards card14">
+                  <img src="./src/assets/playlist/15.jpg" alt="I Love It Feat. Lil Pump" />
+                    <span>This is Kanye West</span>
+                     </div>
+                       </a>
+
+              <!-- CARD 15 -->
+              <a href="src/music/14.The London ft. J. Cole & Travis Scott.mp3" class="cards">
+                <div class="cards card14">
+                  <img src="./src/assets/playlist/14.jpg" alt="The London" />
+                   <span>This is Travis Scottt</span>
+                    </div>
+                     </a>
+
+<div class="sidebar">
+    <nav class="sidebar__navigation">
+        <div class="logo">
+           <a href="">
+              <img src="src/assets/icons/logo.png" alt="logo" />
+                </a>
+<div id="inicioBuscar">
+  <ul>
+    <li>
+      <a href="">
+        <span class="fa fa-home"></span>
+          <span>Início</span>
+            </a>
+              </li>
+                <li>
+                 <a href="#">
+                   <span class="fa fa-search"></span>
+                     <span>Buscar</span>
+                       </a>
+                        </li>
+                          </ul>
+                           </nav>
+<div class="library">
+  <div class="library__content">
+    <button class="library__button">
+       <span class="fa fas fa-book"></span>
+         <span>Sua Biblioteca</span>
+          </button>
+             <span class="fa fa-plus"></span>
+              </div>             
+                 </div>
+<section class="section-playlist">
+  <div class="section-playlist__content">
+    <span class="text title">Suas Playlists</span>
+     <span class="subtitle">Escolha uma Playlist abaixo ou crie uma nova.</span>
+      <button class="section-playlist__button">
+        <div class="playlist-container">
+          <span id="createPlaylistBtn">Criar Playlist</span>
+            <div class="options-container" id="optionsContainer" style="display: none;">
+              <input type="checkbox" id="option1">
+                <label for="option1">Opção 1</label><br>
+                  <input type="checkbox" id="option2">
+                    <label for="option2">Opção 2</label><br>
+                       <input type="checkbox" id="option3">
+                         <label for="option3">Opção 3</label><br>
+                          </div>
+                            </div>
+                             </section>
+<div class="cookies">
+  <a href="#">Cookies</a>    
+    </div>
+
+<div class="languages">
+  <button class="languages__button" onclick="toggleLanguagesOptions()">
+    <span class="fa fa-globe"></span>
+      <span>Português do Brasil</span>
+        </button>
+          <div class="languages__options" id="languagesOptions" style="display: none;">
+            <button onclick="changeLanguage('Inglês, ')">
+              <img src="./src/assets/icons/united-kingdom.png" alt="English Flag">
+                <button onclick="changeLanguage('Espanhol, ')">
+                  <img src="./src/assets/icons/spain.png" alt="Espanhol Flag">
+                    <button onclick="changeLanguage('Francês, ')">
+                      <img src="./src/assets/icons/france.png" alt="France Flag">
+                        <button onclick="changeLanguage('Italiano, ')">
+                          <img src="./src/assets/icons/italy.png" alt="Italy Flag">
+                            </button>
+                              </div>  
+                                </div>
+                                  </div>
+</main>
+<footer class="disclaimer-premium">
+  <div class="text">
+     <p class="disclaimer-premium__title">Teste o Premium de graça!</p>
+       <p class="disclaimer-premium__subtitle" onclick="showSignUpForm()">Inscreva-se para se tornar um membro premium e curtir musicas ilimitadas sem nenhum anúncio.</p>
+         </div>
+            <div class="button">
+              <button class="button" id="inscrevaSeBtn" onclick="showSignUpForm()" >Inscreva-se Grátis</button>
+                </div>
+                   </footer>
+                    </div>
+
+</body>
+    <script src="script.js"></script>
+      <script src="./acount.js"></script>-
+         <script src="search.js"></script>
+</html>

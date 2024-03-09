@@ -1,0 +1,275 @@
+#toggleButton {
+  background-color: #fff;
+  justify-content: center;
+  color: #000;
+  font-weight: bold; font-size: 0.75rem;
+  border: 0; border-radius: 1.25rem;
+  cursor: pointer;
+  padding: 0.625rem;
+  position:fixed;
+  left: 1.875rem;
+  top: 22rem; 
+  text-decoration: none;
+  text-transform: none;
+  z-index: 1;
+  width: 7.0625rem;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+    &:hover {
+     transform: scale(1.1 );
+    }
+  }
+  
+  #player {
+      background-color: transparent;
+      color: 2px transparent;
+      border-radius: 0.625rem;
+      padding: 1.875rem 2.5rem 0.625rem 2.5rem;
+      position:absolute;
+      top: 30rem;
+      left: 5px; 
+      z-index: 1; 
+    }
+  
+  #player button {
+      padding: 1px;
+      font-size: 2.8125rem;
+      width: 4.625rem;
+      color: #2cff02;
+      background-color: transparent;
+      border:none;
+      border-radius: 0.625rem;
+      cursor: pointer;
+      position: relative;
+      bottom: -65px;
+      left: 5px;
+      transition: transform 0.3s ease;
+    &:hover {
+     transform: scale(1.1 );
+    }
+  }
+  
+    
+    #volumeControl {
+      width: 50px; 
+      height: 5px; 
+      background-color: #2cff02; 
+      border: 1px solid black; 
+      border-radius: 20px; 
+      outline: none; 
+      -webkit-appearance: none; 
+      appearance: none;
+      position: relative; 
+      left: 230px; 
+      bottom: 71px; 
+      writing-mode: bt-lr; 
+      transform: rotate(270deg);
+    }
+  
+  #volumeControl::-webkit-slider-thumb {
+    width: 1rem;
+    height: 1rem; 
+    background-color: #b3b3b3; 
+    border: 1px solid black;
+    border-radius: 50%; 
+    cursor: pointer; 
+    -webkit-appearance: none; 
+    appearance: none; 
+    position: relative; 
+    z-index: 2; 
+  }
+  
+  #vol{
+    position: relative;
+    border: none;
+    bottom: 3.125rem;
+    left: 10.9375rem;
+    background-color: transparent;
+    color: #2cff02;
+  }
+  
+  #currentTime{
+  
+    background-color: transparent;
+    border-radius: 5px; border: none;
+    color: #fff;
+    position:relative; 
+    left:1px;
+    bottom: 5px;
+    font-size: 0.8125rem;
+  }
+  
+  #remainingTime{
+    background-color: transparent;
+    border-radius: 5px; border: none;
+    color: #fff;
+    position:relative; 
+    left: 13rem;
+    bottom: 1.375rem;
+    font-size: 0.8125rem;
+  }
+  
+  #progressSlider {
+
+    height: 3px;
+    width: 14.6875rem;
+    position:relative; 
+    left:0px;
+    bottom: 3.125rem;
+    background-color: #b1b1b1;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    cursor: pointer; 
+  }
+  
+  #progressSlider::-webkit-slider-thumb {
+    background-color: #2cff02;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+    #trackInfo {
+      background-color: #2cff02;
+      color: #000;
+      border-radius: 0.625rem;
+      padding: 3px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      position: relative;
+      top: -110px;
+      z-index: 4;
+      width: 14.6875rem;
+      max-height: 2.5rem;
+      white-space: nowrap;
+    }
+  
+    #trackArtistDiv{
+      font-size: 1rem;
+      display:block;
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-top: 3px;
+      color: #2cff02;
+      font-weight: 600;
+      background-color: #121212;
+      border-radius: 3.125rem;
+      border: transparent;
+      max-width: 15rem;
+      max-height: 2.5rem;
+      position: relative;
+    }
+  
+  /* Media Queries*/
+@media only screen and (max-width: 768px) {
+  #toggleButton {
+      left: 0.625rem;
+      top: 15.625rem;
+  }
+
+  #player {
+      top: 21.875rem;
+      left: 2.5rem;
+      padding: 1.25rem 1.875rem 0.3125rem 1.875rem;
+  }
+}
+
+#player button {
+  padding: 1px;
+  font-size: 2.8125rem;
+  width: 4.625rem;
+  color: #2cff02;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.625rm;
+  cursor: pointer;
+  position: relative;
+  bottom: -65px;
+  left: 5px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  #toggleButton {
+    position: relative;
+      left: 13rem;
+      top: 6rem; 
+      width: 8rem;
+      height: 3rem;
+      color: #121212;
+      background-color: #2cff02;
+      font-weight: bold;
+  } 
+
+  #player {
+      position: relative;
+      top: 32rem;
+      left: 1.8rem;
+      width: 70%;
+      display: flex;
+      justify-content: auto;
+     margin-bottom: 1.5rem;
+  }
+
+  #player button {
+    padding: 1px;
+    font-size: 3rem;
+    width: 4.699rem;
+    color: #2cff02;
+    background-color: transparent;
+    border:none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#progressSlider {
+  height: 3px;
+  width: 14.8rem;
+  position:relative; 
+  left:0px;
+  bottom: 3.125rem;
+
+#trackInfo {
+  background-color: #2cff02;
+  color: #000;
+  border-radius: 1rem;
+  padding: 3px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative;
+  top: -110px;
+  z-index: 4;
+  width: 14.6875rem;
+  max-height: 2.5rem;
+  white-space: nowrap;
+}
+
+#trackArtistDiv{
+  font-size: 1rem;
+  display:block;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 3px;
+  color: #2cff02;
+  font-weight: bold;
+  background-color: #121212;
+  border-radius: 5rem;
+  border: transparent;
+  max-width: 14rem;
+  max-height: 2.5rem;
+  position: relative;
+  
+}
+;}}
