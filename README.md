@@ -1,6 +1,7 @@
 <h1>Bem-vindo ao Kevyn Music Streaming!</h1>
 
-![Kevyn Music Streaming page](https://github.com/KevynMendes/Kevyn-Music-Streaming/assets/156138743/3b00fe68-6f05-465b-acf9-803b8d692737)
+
+![Kevyn Music Streaming Page](https://github.com/KevynMendes/Kevyn-Music-Streaming/assets/156138743/7dc183fa-9f37-47e2-b5f2-eb151b4f8509)
 
 
 Explore um mundo de música sem limites com o Kevyn Music Streaming. Nossa plataforma oferece uma experiência única para os amantes da música, combinando uma vasta biblioteca de faixas com recursos intuitivos e uma interface elegante.
