@@ -13,3 +13,5 @@ Nossa seleção de playlists é diversificada e atualizada regularmente, garanti
 Além disso, nossa plataforma oferece recursos exclusivos, como a opção de criar suas próprias playlists personalizadas e a capacidade de se inscrever como membro premium para desfrutar de músicas ilimitadas sem anúncios.
 
 Junte-se a nós no Kevyn Music Streaming e embarque em uma jornada musical emocionante. Inscreva-se agora para começar a explorar todo o universo de possibilidades musicais que temos a oferecer.!
+##
+Projeto feito com: HTML, CSS e Java Script.
