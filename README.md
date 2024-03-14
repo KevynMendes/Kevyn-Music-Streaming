@@ -1,17 +1,24 @@
-<h1>Bem-vindo ao Kevyn Music Streaming!</h1>
-
+# Bem-vindo ao Kevyn Music Streaming!
 
 ![Kevyn Music Streaming Page](https://github.com/KevynMendes/Kevyn-Music-Streaming/assets/156138743/7dc183fa-9f37-47e2-b5f2-eb151b4f8509)
 
+## Descrição
 
-Explore um mundo de música sem limites com o Kevyn Music Streaming. Nossa plataforma oferece uma experiência única para os amantes da música, combinando uma vasta biblioteca de faixas com recursos intuitivos e uma interface elegante.
+Explore um mundo de música sem limites com o Kevyn Music Streaming. o projeto oferece uma experiência única para os amantes da música, proporcionando acesso a uma vasta biblioteca de faixas combinada com recursos intuitivos e uma interface elegante.
 
-Ao acessar o Kevyn Music Streaming, você se depara com uma interface limpa e moderna, projetada para proporcionar uma navegação fácil e agradável. Encontre suas músicas favoritas rapidamente com nossa barra de pesquisa inteligente, onde você pode digitar o que deseja ouvir e começar a reproduzir instantaneamente.
+## Recursos Principais
 
-Nossa seleção de playlists é diversificada e atualizada regularmente, garantindo que você encontre sempre algo para acompanhar seu humor ou atividade. Desde os últimos sucessos até os clássicos atemporais, há algo para todos os gostos.
+- **Interface Moderna e Intuitiva:** Navegue com facilidade e estilo em nossa interface limpa e moderna.
+- **Player Completo:** Desfrute de um player 100% funcional com todas as funções necessárias para uma experiência musical imersiva.
+- **Barra de Pesquisa Inteligente:** Encontre suas músicas favoritas rapidamente com nossa barra de pesquisa inteligente, começando a reprodução instantaneamente.
+- **Membro Premium:** Crie uma conta e faça login para desfrutar de recursos exclusivos reservados para nossos membros premium.
 
-Além disso, nossa plataforma oferece recursos exclusivos, como a opção de criar suas próprias playlists personalizadas e a capacidade de se inscrever como membro premium para desfrutar de músicas ilimitadas sem anúncios.
+Acesse o site [aqui](https://kevynmendes.github.io/Kevyn-Music-Streaming/)
 
-Junte-se a nós no Kevyn Music Streaming e embarque em uma jornada musical emocionante. Inscreva-se agora para começar a explorar todo o universo de possibilidades musicais que temos a oferecer.!
-##
-Projeto feito com: HTML, CSS e Java Script.
+## Tecnologias Utilizadas
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- HTML
+- CSS
+- JavaScript
+https://kevynmendes.github.io/Kevyn-Music-Streaming/
