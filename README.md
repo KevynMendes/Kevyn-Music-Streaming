@@ -21,4 +21,3 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
-https://kevynmendes.github.io/Kevyn-Music-Streaming/
